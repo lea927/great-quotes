@@ -1,14 +1,15 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
     <Router>
       <div className="App">
         {/* navbar component goes here */}
-        <Routes>
+        <Switch>
           <Route exact path="/quotes">
-            {/* landing page component goes here */}
+            <Quotes/>
           </Route>
           <Route>
             {/* quote component goes here
@@ -18,7 +19,7 @@ function App() {
           <Route>
             {/* add quote component goes here */}
           </Route>
-        </Routes>
+        </Switch>
       </div>
     </Router>
   );
