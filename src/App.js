@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import Quotes from './components/Quotes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        {/* navbar component goes here */}
+        <Switch>
+          <Route exact path="/">
+            <Redirect to="/quotes"/>
+          </Route>
+          <Route exact path="/quotes">
+            <Quotes/>
+          </Route>
+          <Route>
+            {/* quote component goes here
+            include uuid in path
+            ex: /quotes/:uuid */}
+          </Route>
+          <Route>
+            {/* add quote component goes here */}
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
