@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Quotes from './components/Quotes';
 
 function App() {
@@ -8,6 +8,9 @@ function App() {
       <div className="App">
         {/* navbar component goes here */}
         <Switch>
+          <Route exact path="/">
+            <Redirect to="/quotes"/>
+          </Route>
           <Route exact path="/quotes">
             <Quotes/>
           </Route>
