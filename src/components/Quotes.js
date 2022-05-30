@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Quote from "./Quote";
 
 export function Quotes() {
   const [error, setError] = useState(null);
@@ -29,7 +30,7 @@ export function Quotes() {
       <ul>
         {quotes.map(quote =>
           <li key={quote.id}>
-            {quote.quote} - {quote.author}
+            <Quote quote={quote.quote} author={quote.author}/>
           </li>
         )}
       </ul>
