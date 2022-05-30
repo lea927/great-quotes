@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Quotes from './components/Quotes';
+import QuotesComponent from './components/QuotesComponent';
+import QuoteComponent from './components/QuoteComponent';
 
 function App() {
   return (
@@ -12,12 +13,10 @@ function App() {
             <Redirect to="/quotes"/>
           </Route>
           <Route exact path="/quotes">
-            <Quotes/>
+            <QuotesComponent/>
           </Route>
-          <Route>
-            {/* quote component goes here
-            include uuid in path
-            ex: /quotes/:uuid */}
+          <Route path="/quotes/:id">
+            <QuoteComponent/>
           </Route>
           <Route>
             {/* add quote component goes here */}

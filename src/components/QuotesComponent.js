@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Quote from "./Quote";
+import QuoteComponent from "./QuoteComponent";
 
-export function Quotes() {
+export function QuotesComponent() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [quotes, setQuotes] = useState([]);
@@ -30,11 +30,11 @@ export function Quotes() {
       <ul>
         {quotes.map(quote =>
           <li key={quote.id}>
-            <Quote quote={quote.quote} author={quote.author}/>
+            <QuoteComponent quote={quote.quote} author={quote.author}/>
           </li>
         )}
       </ul>
     )
   }
 }
-export default Quotes;
+export default QuotesComponent;
